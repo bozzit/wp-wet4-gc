@@ -36,20 +36,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!--[if gte IE 9 | !IE ]><!-->
-<link href="<?php bloginfo('template_directory'); ?>/dist/assets/favicon.ico" rel="icon" type="image/x-icon" />
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/dist/css/wet-boew.min.css" />
+<link href="<?php bloginfo('template_directory'); ?>/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/wet-boew/css/wet-boew.min.css" />
 <!--<![endif]-->
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/dist/css/theme.min.css" />
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/wet-boew/css/theme.min.css" />
 <!--[if lt IE 9]>
-<link href="<?php bloginfo('template_directory'); ?>/dist/assets/favicon.ico" rel="shortcut icon"/>
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/dist/css/ie8-wet-boew.css"/>
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/dist/css/ie8-theme.min.css"/>
+<link href="<?php bloginfo('template_directory'); ?>/wet-boew/assets/favicon.ico" rel="shortcut icon"/>
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/wet-boew/css/ie8-wet-boew.css"/>
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/wet-boew/css/ie8-theme.min.css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/dist/js/ie8-wet-boew.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
 <noscript>
-        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/dist/css/noscript.min.css" />
+        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/wet-boew/css/noscript.min.css" />
 </noscript>
 
 <!-- WordPress Begins -->
@@ -87,7 +87,7 @@
             <div id="wb-bar">
                 <div class="container">
                     <div class="row">
-                        <object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="<?php bloginfo('template_directory'); ?>/dist/assets/sig-en.svg" aria-label="<?php _e("<!--:en-->Government of Canada<!--:--><!--:fr-->Gouvernement du Canada<!--:-->"); ?>"></object>
+                        <object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="<?php bloginfo('template_directory'); ?>/wet-boew/assets/sig-en.svg" aria-label="<?php _e("<!--:en-->Government of Canada<!--:--><!--:fr-->Gouvernement du Canada<!--:-->"); ?>"></object>
                         <ul id="gc-bar" class="list-inline">
                             <li><a href="http://www.canada.ca/<?php _e("<!--:en-->en<!--:--><!--:fr-->fr<!--:-->"); ?>/index.html" rel="external">Canada.ca</a>
                             </li>
@@ -120,7 +120,7 @@
                         <a href="<?php bloginfo('url'); ?>"> <span><?php bloginfo('name'); ?></span> 
                         </a>
                     </div>
-                    <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="<?php bloginfo('template_directory'); ?>/dist/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
+                    <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="<?php bloginfo('template_directory'); ?>/wet-boew/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
                     <section id="wb-srch" class="visible-md visible-lg">
                         <h2><?php _e("<!--:en-->Search<!--:--><!--:fr-->Recherche<!--:-->"); ?></h2> 
                         <form action="<?php bloginfo('url'); ?>/" method="get" role="search" class="form-inline">
@@ -135,7 +135,7 @@
             </div>
         </div>
 
-        <nav role="navigation" id="wb-sm" data-ajax-fetch="<?php bloginfo('template_directory'); ?>/dist/ajax/sitemenu-<?php _e("<!--:en-->en<!--:--><!--:fr-->fr<!--:-->"); ?>.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
+        <nav role="navigation" id="wb-sm" data-ajax-fetch="<?php bloginfo('template_directory'); ?>/wet-boew/ajax/sitemenu-<?php _e("<!--:en-->en<!--:--><!--:fr-->fr<!--:-->"); ?>.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
             <div class="container nvbar">
                 <h2><?php _e("<!--:en-->Site menu<!--:--><!--:fr-->Menu du site<!--:-->"); ?></h2> 
                 <div class="row">

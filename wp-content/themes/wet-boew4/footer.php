@@ -68,9 +68,9 @@
     </footer>
     <!--[if gte IE 9 | !IE ]><!-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/dist/js/wet-boew.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/wet-boew/js/wet-boew.min.js"></script>
     <!--<![endif]-->
-    <!--[if lt IE 9]><script src="<?php bloginfo('template_directory'); ?>/dist/js/ie8-wet-boew2.min.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="<?php bloginfo('template_directory'); ?>/wet-boew/js/ie8-wet-boew2.min.js"></script><![endif]-->
     
 <?php wp_footer(); ?>
 </body>
