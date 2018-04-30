@@ -59,7 +59,7 @@ class Walker {
 	 * @param int    $depth  Depth of the item.
 	 * @param array  $args   An array of additional arguments.
 	 */
-	public function start_lvl( $output, $depth = 0, $args = array() ) {}
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {}
 
 	/**
 	 * Ends the list of after the elements are added.
@@ -74,7 +74,7 @@ class Walker {
 	 * @param int    $depth  Depth of the item.
 	 * @param array  $args   An array of additional arguments.
 	 */
-	public function end_lvl( $output, $depth = 0, $args = array() ) {}
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {}
 
 	/**
 	 * Start the element output.
@@ -91,7 +91,7 @@ class Walker {
 	 * @param array  $args              An array of additional arguments.
 	 * @param int    $current_object_id ID of the current item.
 	 */
-	public function start_el( $output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {}
+	public function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {}
 
 	/**
 	 * Ends the element output, if needed.
@@ -106,7 +106,7 @@ class Walker {
 	 * @param int    $depth  Depth of the item.
 	 * @param array  $args   An array of additional arguments.
 	 */
-	public function end_el( $output, $object, $depth = 0, $args = array() ) {}
+	public function end_el( &$output, $object, $depth = 0, $args = array() ) {}
 
 	/**
 	 * Traverse elements to create list from elements.
@@ -127,7 +127,7 @@ class Walker {
 	 * @param array  $args              An array of arguments.
 	 * @param string $output            Used to append additional content (passed by reference).
 	 */
-	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, $output ) {
+	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
 		if ( ! $element ) {
 			return;
 		}
@@ -141,7 +141,7 @@ class Walker {
 			$args[0]['has_children'] = $this->has_children; // Back-compat.
 		}
 
-		$cb_args = array_merge( array($output, $element, $depth), $args);
+		$cb_args = array_merge( array(&$output, $element, $depth), $args);
 		call_user_func_array(array($this, 'start_el'), $cb_args);
 
 		// descend only when the depth is right and there are childrens for this element
@@ -152,7 +152,7 @@ class Walker {
 				if ( !isset($newlevel) ) {
 					$newlevel = true;
 					//start the child delimiter
-					$cb_args = array_merge( array($output, $depth), $args);
+					$cb_args = array_merge( array(&$output, $depth), $args);
 					call_user_func_array(array($this, 'start_lvl'), $cb_args);
 				}
 				$this->display_element( $child, $children_elements, $max_depth, $depth + 1, $args, $output );
@@ -162,12 +162,12 @@ class Walker {
 
 		if ( isset($newlevel) && $newlevel ){
 			//end the child delimiter
-			$cb_args = array_merge( array($output, $depth), $args);
+			$cb_args = array_merge( array(&$output, $depth), $args);
 			call_user_func_array(array($this, 'end_lvl'), $cb_args);
 		}
 
 		//end this element
-		$cb_args = array_merge( array($output, $element, $depth), $args);
+		$cb_args = array_merge( array(&$output, $element, $depth), $args);
 		call_user_func_array(array($this, 'end_el'), $cb_args);
 	}
 

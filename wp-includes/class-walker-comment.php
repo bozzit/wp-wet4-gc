@@ -49,7 +49,7 @@ class Walker_Comment extends Walker {
 	 * @param int    $depth  Optional. Depth of the current comment. Default 0.
 	 * @param array  $args   Optional. Uses 'style' argument for type of HTML list. Default empty array.
 	 */
-	public function start_lvl( $output, $depth = 0, $args = array() ) {
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$GLOBALS['comment_depth'] = $depth + 1;
 
 		switch ( $args['style'] ) {
@@ -78,7 +78,7 @@ class Walker_Comment extends Walker {
 	 * @param array  $args   Optional. Will only append content if style argument value is 'ol' or 'ul'.
 	 *                       Default empty array.
 	 */
-	public function end_lvl( $output, $depth = 0, $args = array() ) {
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$GLOBALS['comment_depth'] = $depth + 1;
 
 		switch ( $args['style'] ) {
@@ -125,7 +125,7 @@ class Walker_Comment extends Walker {
 	 * @param array      $args              An array of arguments.
 	 * @param string     $output            Used to append additional content. Passed by reference.
 	 */
-	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, $output ) {
+	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
 		if ( !$element )
 			return;
 
@@ -164,7 +164,7 @@ class Walker_Comment extends Walker {
 	 * @param array      $args    Optional. An array of arguments. Default empty array.
 	 * @param int        $id      Optional. ID of the current comment. Default 0 (unused).
 	 */
-	public function start_el( $output, $comment, $depth = 0, $args = array(), $id = 0 ) {
+	public function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
 		$depth++;
 		$GLOBALS['comment_depth'] = $depth;
 		$GLOBALS['comment'] = $comment;
@@ -204,7 +204,7 @@ class Walker_Comment extends Walker {
 	 * @param int        $depth   Optional. Depth of the current comment. Default 0.
 	 * @param array      $args    Optional. An array of arguments. Default empty array.
 	 */
-	public function end_el( $output, $comment, $depth = 0, $args = array() ) {
+	public function end_el( &$output, $comment, $depth = 0, $args = array() ) {
 		if ( !empty( $args['end-callback'] ) ) {
 			ob_start();
 			call_user_func( $args['end-callback'], $comment, $args, $depth );
