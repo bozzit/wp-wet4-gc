@@ -14,7 +14,6 @@ get_header();
     <!-- MainContentStart -->
 
 <div class="row">
-<H1> This is a one Time use File </h1>
    <div class="wb-tabs carousel-s2">
       <ul role="tablist">
          <li class="active"><a href="#panel4"><img src="/assets/img/protect-environment.jpg" alt="Tab 1: Take Note: Renewal of the Aviation Document Booklet." /></a></li>
